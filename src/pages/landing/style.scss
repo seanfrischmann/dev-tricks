@@ -18,12 +18,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
 
-        .welcome-notes {
             p {
                 width: 400px;
             }
+        }
+
+        .padding {
+            padding: 15px;
         }
 
         .template-title {

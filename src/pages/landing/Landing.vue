@@ -43,18 +43,52 @@
                                         <li>vue client - command line project generator</li>
                                     </ul>
                                 </p>
-                                <p>
-                                </p>
                             </div>
-                            <div class="notes" v-show="currentSection == 'instance'">
-                                <p>
-                                    A few notes about Vue:
-                                    <ul>
-                                        <li>Vue uses declaritive rendering</li>
-                                        <li>Templating syntax</li>
-                                        <li>Directive bindings</li>
-                                    </ul>
-                                </p>
+                            <div v-show="currentSection == 'instance'">
+                                <div class="notes">
+                                    <p>
+                                        While "The Instance" refers to the Vue object, it is
+                                        tighly wound up with the corresponding template.
+                                    </p>
+                                    <p>
+                                        The Vue object is where you define:
+                                        <ul>
+                                            <li>Your state (local)</li>
+                                            <li>Your computed properties</li>
+                                            <li>Methods</li>
+                                            <li>Components used</li>
+                                            <li>
+                                                Lifecyle functions: created, ready, destroyed
+                                            </li>
+                                        </ul>
+                                    </p>
+                                </div>
+                                <b-row class="justify-content-center">
+                                    <b-col cols="auto">
+                                        <p class="text-center template-title">pages/landing/landing.js</p>
+                                        <Instance></Instance>
+                                    </b-col>
+                                </b-row>
+                                <b-row class="justify-content-center padding">
+                                    <b-col cols="auto">
+                                        <p>
+                                            A little about using templates:
+                                            <ul>
+                                                <li>Vue uses declaritive rendering</li>
+                                                <li>Templating syntax</li>
+                                                <li>Directive bindings</li>
+                                                <li>Custom Directives</li>
+                                                <li>Custom Filters</li>
+                                            </ul>
+                                        </p>
+                                    </b-col>
+                                </b-row>
+                                <b-row class="justify-content-center">
+                                    <b-col cols="auto">
+                                        <p class="text-center template-title">pages/landing/Landing.vue</p>
+                                        <Template></Template>
+                                    </b-col>
+                                </b-row>
                             </div>
                             <div class="text-center" v-show="currentSection == 'vue-router'">
                                 <p>
@@ -62,19 +96,6 @@
                                     them to routes.
                                 </p>
                             </div>
-                        </b-col>
-                    </b-row>
-                    <b-row
-                        class="justify-content-center"
-                        v-show="currentSection == 'instance'"
-                    >
-                        <b-col cols="auto">
-                            <p class="text-center template-title">pages/landing/Landing.vue</p>
-                            <Template></Template>
-                        </b-col>
-                        <b-col cols="auto">
-                            <p class="text-center template-title">pages/landing/landing.js</p>
-                            <Instance></Instance>
                         </b-col>
                     </b-row>
                     <b-row
@@ -104,10 +125,6 @@
                         </b-col>
                         <b-col cols="auto">
                             <Counter :color="'maroon'"/>
-                        </b-col>
-                    </b-row>
-                    <b-row>
-                        <b-col>
                         </b-col>
                     </b-row>
                 </b-card>
