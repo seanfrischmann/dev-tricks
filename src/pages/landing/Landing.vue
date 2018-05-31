@@ -15,7 +15,7 @@
                             <b-btn-group>
                                 <b-btn
                                     v-for="button in buttons"
-                                    :key="'button-' + button.label"
+                                    :key="'button-' + button.id"
                                     :pressed="currentSection == button.id"
                                     :variant="button.variant"
                                     @click="changeSection(button.id)"
@@ -25,7 +25,7 @@
                     </b-row>
                     <b-row>
                         <b-col>
-                            <div class="welcome-notes" v-show="currentSection == ''">
+                            <div class="welcome-notes" v-show="currentSection == 'intro'">
                                 <p>
                                     VueJS is a frontend <strong>framework</strong> which
                                     has gained momentum in the last few years.
@@ -48,7 +48,7 @@
                                 <div class="notes">
                                     <p>
                                         While "The Instance" refers to the Vue object, it is
-                                        tighly wound up with the corresponding template.
+                                        tighly wound up with its corresponding template.
                                     </p>
                                     <p>
                                         The Vue object is where you define:
@@ -65,7 +65,9 @@
                                 </div>
                                 <b-row class="justify-content-center">
                                     <b-col cols="auto">
-                                        <p class="text-center template-title">pages/landing/landing.js</p>
+                                        <p class="text-center template-title">
+                                            pages/landing/vue.js
+                                        </p>
                                         <Instance></Instance>
                                     </b-col>
                                 </b-row>
@@ -85,7 +87,9 @@
                                 </b-row>
                                 <b-row class="justify-content-center">
                                     <b-col cols="auto">
-                                        <p class="text-center template-title">pages/landing/Landing.vue</p>
+                                        <p class="text-center template-title">
+                                            pages/landing/Landing.vue
+                                        </p>
                                         <Template></Template>
                                     </b-col>
                                 </b-row>
@@ -95,6 +99,37 @@
                                     Vue Router makes it easy to pull in components and map
                                     them to routes.
                                 </p>
+                            </div>
+                            <div v-show="currentSection == 'local-state'">
+                                <b-row class="justify-content-center">
+                                    <b-col cols="auto">
+                                        <p class="text-center template-title">
+                                            components/counter/vue.js
+                                        </p>
+                                        <LocalState></LocalState>
+                                    </b-col>
+                                </b-row>
+                            </div>
+                            <div v-show="currentSection == 'global-state'">
+                                <div class="notes">
+                                    <p>
+                                        Global State (Store) is a well known established
+                                        pattern used when multiple components interact
+                                        with a common state.
+                                    </p>
+                                    <p>
+                                        Vue uses a library called Vuex, which is a state
+                                        management tool modeled after Flux/Redux.
+                                    </p>
+                                </div>
+                                <b-row class="justify-content-center">
+                                    <b-col cols="auto">
+                                        <p class="text-center template-title">
+                                            components/counter-store/vue.js
+                                        </p>
+                                        <GlobalState></GlobalState>
+                                    </b-col>
+                                </b-row>
                             </div>
                         </b-col>
                     </b-row>

@@ -3,11 +3,13 @@
         &lt;template>
             &lt;b-col class="header">
                 &lt;h1>{{ title }}&lt;/h1>
+                &lt;!-- You can also use the v-text directive -->
+                &lt;h1 v-text="title">&lt;/h1>
             &lt;/b-col>
             &lt;b-btn-group>
                 &lt;b-btn
                     v-for="button in buttons"
-                    :key="'button-' + button.label"
+                    :key="'button-' + button.id"
                     :pressed="
                         currentSection == button.id
                     "

@@ -8,40 +8,40 @@
         import { Button } from 'bootstrap-vue/es/components'
         Vue.use(Button)
 
+        const state = {
+            title: 'An Introduction to VueJS',
+            currentSection: 'intro',
+            buttons: [
+                {
+                    label: 'The Instance',
+                    id: 'instance',
+                    variant: 'outline-secondary'
+                },
+                {
+                    label: 'Vue Router',
+                    id: 'vue-router',
+                    variant: 'outline-secondary'
+                },
+                {
+                    label: 'Local State',
+                    id: 'local-state',
+                    variant: 'outline-secondary'
+                },
+                {
+                    label: 'Global State',
+                    id: 'global-state',
+                    variant: 'outline-secondary'
+                }
+            ]
+        };
+
         export default {
             name: 'Landing',
-            data() {
-                return {
-                    title: 'An Introduction to VueJS',
-                    currentSection: '',
-                    buttons: [
-                        {
-                            label: 'The Instance',
-                            id: 'instance',
-                            variant: 'outline-secondary'
-                        },
-                        {
-                            label: 'Vue Router',
-                            id: 'vue-router',
-                            variant: 'outline-secondary'
-                        },
-                        {
-                            label: 'Local State',
-                            id: 'local-state',
-                            variant: 'outline-secondary'
-                        },
-                        {
-                            label: 'Global State',
-                            id: 'global-state',
-                            variant: 'outline-secondary'
-                        }
-                    ]
-                };
-            },
+            data() { return Object.assign({}, state); },
             methods: {
                 changeSection(section) {
                     this.currentSection =
-                        (this.currentSection == section) ? '' : section;
+                        (this.currentSection == section) ? 'intro' : section;
                 }
             },
             components: {
